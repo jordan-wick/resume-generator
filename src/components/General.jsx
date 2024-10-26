@@ -9,13 +9,13 @@ export default function General() {
         id='firstName' 
         type='text'
         label='First Name' 
-        placeHolder='John' 
+        placeHolder='Walter' 
       />
       <Input 
         id='lastName' 
         type='text'
         label='Last Name' 
-        placeHolder='Snow' 
+        placeHolder='White' 
       />
       <Input 
         id='phone' 
@@ -23,7 +23,12 @@ export default function General() {
         label='Phone Number' 
         placeHolder='(xxx) xxx-xxxx' 
       />
-
+      <Input 
+        id='email' 
+        type='email'
+        label='Email Address' 
+        placeHolder='walt@vamanospest.com' 
+      />
     </div>
   )
 }

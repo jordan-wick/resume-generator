@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function Input({ id, type, label, placeHolder }) {
   const [text, setText] = useState('');
@@ -11,7 +11,6 @@ export default function Input({ id, type, label, placeHolder }) {
     <label htmlFor={id}>
       {label}
       <input 
-        name="firstName" 
         id={id} 
         type={type}
         placeholder={placeHolder}
