@@ -1,6 +1,6 @@
-import Input from "./Input.jsx";
+import Input from "../Input.jsx";
 
-export default function General() {
+export default function Personal() {
 
   return (
     <div className="general section">
