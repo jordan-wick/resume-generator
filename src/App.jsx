@@ -1,21 +1,35 @@
 import { useState } from 'react'
-import PersonalInfo from 'PersonalInfo.jsx';
-import Education from 'Education.jsx';
-import Experience from 'Experience.jsx';
-import Resume from 'Resume.jsx';
+import PersonalSection from './components/personal/PersonalInfo.jsx';
+// import Education from './components/education/Education.jsx';
+// import Experience from './components/experience/Experience.jsx';
+import Resume from './components/Resume.jsx';
+import example from '../exampleData.jsx';
 import './App.css'
 
 function App() {
+  const [personalInfo, setPersonalInfo] = useState(example.personalInfo);
+  // const [education, setEducation] = useState(example.education);
+  // const [experience, setExperience] = useState(example.experiences);
+
+  function handlePersonalChange(e) {
+    const { key } = e.target.dataset;
+    setPersonalInfo({...personalInfo, [key]: e.target.value});
+  }
 
   return (
     <>
-      <PersonalInfo />
-      <Education />
-      <Experience />
+      <PersonalSection
+        name={personalInfo.name}
+        phone={personalInfo.phone}
+        email={personalInfo.email}
+        onChange={handlePersonalChange}
+      />
+      {/* <Education />
+      <Experience /> */}
       <Resume
         personalInfo={personalInfo}
-        education={education}
-        experience={experience}
+        // education={education}
+        // experience={experience}
       />
     </>
   )

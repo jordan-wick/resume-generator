@@ -1,22 +1,35 @@
-import { useState } from 'react';
-
-export default function Input({ id, type, label, placeHolder }) {
-  const [text, setText] = useState('');
-
-  function handleChange(e) {
-    setText(e.target.value);
-  }
+export default function Input({
+  id,
+  type,
+  label, 
+  placeHolder,
+  "data-key": dataKey,
+  value,
+  onChange,
+}) {
 
   return (
-    <label htmlFor={id}>
-      {label}
-      <input 
-        id={id} 
-        type={type}
-        placeholder={placeHolder}
-        value={text}
-        onChange={handleChange}
-      />
-    </label>
+    <div className="input">
+      <label htmlFor={id}>{label}</label>
+
+      {type === 'textarea' ? (
+        <textarea
+          id={id}
+          placeholder={placeHolder}
+          data-key={dataKey}
+          value={value}
+          onChange={onChange}
+        ></textarea>
+      ) : (
+        <input 
+          id={id}
+          type={type}
+          placeholder={placeHolder}
+          value={value}
+          onChange={onChange}
+          data-key={dataKey}
+        />
+      )}
+    </div>
   )
 }
