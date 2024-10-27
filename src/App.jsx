@@ -11,7 +11,7 @@ function App() {
   // const [education, setEducation] = useState(example.education);
   // const [experience, setExperience] = useState(example.experiences);
 
-  function handlePersonalChange(e) {
+  function handlePersonalInfoChange(e) {
     const { key } = e.target.dataset;
     setPersonalInfo({...personalInfo, [key]: e.target.value});
   }
@@ -22,7 +22,7 @@ function App() {
         name={personalInfo.name}
         phone={personalInfo.phone}
         email={personalInfo.email}
-        onChange={handlePersonalChange}
+        onChange={handlePersonalInfoChange}
       />
       {/* <Education />
       <Experience /> */}
