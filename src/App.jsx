@@ -1,4 +1,8 @@
-// import { useState } from 'react'
+import { useState } from 'react'
+import PersonalInfo from 'PersonalInfo.jsx';
+import Education from 'Education.jsx';
+import Experience from 'Experience.jsx';
+import Resume from 'Resume.jsx';
 import './App.css'
 
 function App() {
