@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(example.personalInfo);
-  // const [education, setEducation] = useState(example.education);
+  const [educations, setEducations] = useState(example.educations);
   // const [experience, setExperience] = useState(example.experiences);
 
   function handlePersonalInfoChange(e) {
@@ -16,19 +16,26 @@ function App() {
     setPersonalInfo({...personalInfo, [key]: e.target.value});
   }
 
+  function handleEducationChange(e) {
+    const { id } = e.target.dataset;
+    setEducations({...educations, [id]: e.target.value});
+  }
+
   return (
     <>
-      <PersonalSection
-        name={personalInfo.name}
-        phone={personalInfo.phone}
-        email={personalInfo.email}
-        onChange={handlePersonalInfoChange}
-      />
-      {/* <Education />
-      <Experience /> */}
+      <div className="edit">
+        <PersonalSection
+          name={personalInfo.name}
+          phone={personalInfo.phone}
+          email={personalInfo.email}
+          onChange={handlePersonalInfoChange}
+        />
+        {/* <Education />
+        <Experience /> */}
+      </div>
       <Resume
         personalInfo={personalInfo}
-        // education={education}
+        educations={educations}
         // experience={experience}
       />
     </>

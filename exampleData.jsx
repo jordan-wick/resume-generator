@@ -4,7 +4,7 @@ const example = {
     phone: '(555) 012-4793',
     email: 'buck@deer.com',
   },
-  education: [
+  educations: [
     {
       school: 'University of Phoenix Online',
       degree: 'Bachelor of Science',
@@ -18,7 +18,7 @@ const example = {
       degree: 'Juris Doctorate',
       major: 'Law',
       graduated: '06-2023',
-      isCollapsed: true,
+      isCollapsed: false,
       id: crypto.randomUUID(),
     },
   ],
